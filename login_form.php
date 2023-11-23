@@ -2,40 +2,19 @@
 
 @include 'config.php';
 
-session_start();
 
-if(isset($_POST['submit'])){
-
-   $name =  $_POST['name'];
+if(isset($_POST['okk'])){
    $email = $_POST['email'];
-   $pass = md5($_POST['password']);
-   $cpass = md5($_POST['cpassword']);
-
-   $select = " SELECT * FROM user_compte WHERE user_name = '$user_name ' &&mot_passe= '$pass' ";
-
-   $result = mysqli_query($conn, $select);
-
-   if(mysqli_num_rows($result) > 0){
-
-      $row = mysqli_fetch_array($result);
-
-      if($row['user_type'] == 'admin'){
-
-         $_SESSION['admin_name'] = $row['name'];
-         header('location:admin_page.php');
-
-      }elseif($row['user_type'] == 'user'){
-
-         $_SESSION['user_name'] = $row['name'];
-         header('location:user_page.php');
-
-      }
-      
-   }else{
-      $error[] = 'incorrect username or password!';
+   $pasword = md5($_POST['password']);
+echo $pasword ;
+echo $email;
+   $sql="SELECT * from user_compte where email = '$email' and  mot_passe = '$pasword' ";
+   $result=mysqli_query($conn,$sql);
+   if($result->num_rows > 0){
+      header('location:contact.php');
    }
+}
 
-};
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +26,7 @@ if(isset($_POST['submit'])){
    <title>login form</title>
 
    <!-- custom css file link  -->
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
@@ -56,16 +35,9 @@ if(isset($_POST['submit'])){
 
    <form action="" method="post">
       <h3>login now</h3>
-      <?php
-      if(isset($error)){
-         foreach($error as $error){
-            echo '<span class="error-msg">'.$error.'</span>';
-         };
-      };
-      ?>
       <input type="email" name="email" required placeholder="enter your email">
       <input type="password" name="password" required placeholder="enter your password">
-      <input type="submit" name="submit" value="login now" class="form-btn">
+      <input type="submit" name="okk" value="login now" class="form-btn">
       <p>don't have an account? <a href="register_form.php">register now</a></p>
    </form>
 
@@ -73,3 +45,9 @@ if(isset($_POST['submit'])){
 
 </body>
 </html>
+
+<?php 
+
+
+
+?>

@@ -19,7 +19,6 @@ $sql = "SELECT * FROM `contact`";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
   while($row = mysqli_fetch_assoc($result)) {?>
-
 <tr>
             <td> <?= $row['first_name']?></td>
             <td> <?= $row['last_name']?></td>
@@ -28,7 +27,6 @@ if (mysqli_num_rows($result) > 0) {
             <td> <?= $row['description']?></td>
             <td> <?= $row['date_creation']?></td>
         </tr>
-
    <?php
   }
 } else {
