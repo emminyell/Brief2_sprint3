@@ -1,17 +1,19 @@
 <?php
-
+session_start();
 @include 'config.php';
 
 
 if(isset($_POST['okk'])){
    $email = $_POST['email'];
    $pasword = md5($_POST['password']);
-echo $pasword ;
-echo $email;
+
    $sql="SELECT * from user_compte where email = '$email' and  mot_passe = '$pasword' ";
    $result=mysqli_query($conn,$sql);
-   if($result->num_rows > 0){
-      header('location:contact.php');
+   if(mysqli_num_rows($result)> 0){
+      $row=mysqli_fetch_assoc($result);
+      $_SESSION['id']=$row['user_id'];
+      $_SESSION['user_name']=$row['user_name'];
+      header('location:profile.php');
    }
 }
 

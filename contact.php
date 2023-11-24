@@ -1,32 +1,42 @@
+<?php
+
+@include 'config.php';
+
+if(isset($_POST['submit'])){
+
+  $name = $_POST['fullname'];
+  $email= $_POST['email'];
+  $phone= $_POST['phone'];
+  $date= $_POST['date'];
+  $message= $_POST['message'];
+  
+        $insert = "INSERT INTO `contact`(`contact_id`, `full_name`, `email`, `téléphone`, `description`, `date_creation`, `user_id`) VALUES(null,'$name','$email','$phone','$message','$date', 1)";
+        mysqli_query($conn, $insert);
+        header('location:profile.php');
+      }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>contact</title>
     <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.2/components/contacts/contact-1/assets/css/contact-1.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <button class="add">Add conctact</button>
 <!-- Contact 1 - Bootstrap Brain Component -->
-<section class="bg-light py-3 py-md-5">
-  <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+      <div id="contact" class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
         <h2 class="mb-4 display-5 text-center">Contact</h2>
-        <p class="text-secondary mb-5 text-center">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque et neque id ligula mattis commodo.</p>
-        <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
       </div>
-    </div>
-  </div>
-
   <div class="container">
     <div class="row justify-content-lg-center">
       <div class="col-12 col-lg-9">
         <div class="bg-white border rounded shadow-sm overflow-hidden">
 
-          <form action="#!">
+          <form action="" method="post">
             <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
               <div class="col-12">
                 <label for="fullname" class="form-label">Full Name <span class="text-danger">*</span></label>
@@ -54,22 +64,19 @@
                   <input type="tel" class="form-control" id="phone" name="phone" value="">
                 </div>
               </div>
+              <div class="col-12">
+                <label for="message" class="form-label">description<span class="text-danger">*</span></label>
+                <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+              </div>
               <div class="col-12 col-md-6">
                 <label for="phone" class="form-label">Creation Date</label>
                 <div class="input-group">
                   <input type="date" class="form-control" id="date" name="date" value="date">
               <div class="col-12">
-                <label for="message" class="form-label">description<span class="text-danger">*</span></label>
-                <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
-              </div>
-              <div class="col-12">
-                <div class="d-grid">
-                  <button class="btn btn-primary btn-lg" type="submit">Submit</button>
-                </div>
-              </div>
+                <div id="btn_submit" class="d-grid">
+                  <button name="submit" type="submit">Submit</button>
             </div>
           </form>
-
         </div>
       </div>
     </div>
