@@ -7,7 +7,10 @@
    outline: none; border:none;
    text-decoration: none;
 }
-
+.container .img{
+  width: 80px;
+  height:80px;
+}
 .container{
    min-height: 100vh;
    display: flex;

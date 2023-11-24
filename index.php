@@ -54,7 +54,7 @@
           </div>
         </div>
       </div>
-      <img src="glasses.svg" class="img-fluid" alt="">
+      <img src="glasses.png" class="img" alt="" width="60%" height="400px">
     </div>
 
   </section><!-- End Hero -->
