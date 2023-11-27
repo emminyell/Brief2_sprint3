@@ -28,7 +28,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Full name</th>
+      <th scope="col">id</th>
       <th scope="col">Full name</th>
       <th scope="col">Email</th>
       <th scope="col">phone</th>

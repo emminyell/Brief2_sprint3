@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
   $date=date('y_m_d h:i:s');
   $message= $_POST['message'];
   
-        $insert = "INSERT INTO `contact`(`contact_id`, `full_name`, `email`, `téléphone`, `description`, `date_creation`, `user_id`) VALUES(null,'$name','$email','$phone','$message','$date', 1)";
+        $insert = "INSERT INTO `contact`(`contact_id`, `full_name`, `email`, `téléphone`, `description`, `date_creation`, `user_id`) VALUES(null,'$name','$email','$phone','$message','$date', 21)";
         mysqli_query($conn, $insert);
         header('location:user_contact.php');
       }

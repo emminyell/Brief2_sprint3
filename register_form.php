@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
    $name = $_POST['name'];
    $email= $_POST['email'];
    $password =md5($_POST['password']);
-  
+   
          $insert = "INSERT INTO user_compte(user_name,email,mot_passe) VALUES('$name','$email','$password')";
          mysqli_query($conn, $insert);
          header('location:login_form.php');

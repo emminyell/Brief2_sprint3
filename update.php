@@ -4,8 +4,8 @@
 
 if(isset($_GET['updateid'])){
   $id = $_GET['updateid'] ;
-      $update = "SELECT `contact_id`, `full_name`, `email`, `téléphone`, `description`, `date_creation` FROM `contact` WHERE contact_id= $id";
-      $result= mysqli_query($conn, $update);
+      $select = "SELECT `contact_id`, `full_name`, `email`, `téléphone`, `description`, `date_creation` FROM `contact` WHERE contact_id= $id";
+      $result= mysqli_query($conn, $select);
       $row=mysqli_fetch_assoc($result);
       
 }
