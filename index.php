@@ -25,7 +25,7 @@
       <a class="logo">YOUCONTACT</a></div>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" href="#contact">Library</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contacts</a></li>
           <li><a class="nav-link scrollto" href="register_form.php">Sing up</a></li>
           <li><a class="getstarted scrollto" href="login_form.php">Sign in</a></li>
         </ul>
@@ -40,8 +40,8 @@
         <div class="col-lg-6 d-flex flex-column justify-content-center">
           <div class="content">
             <div clas="ktba"></div>
-          <h1 data-aos="fade-up">Book Store</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">Read Now</h2>
+          <h1 data-aos="fade-up">LinkEase</h1>
+          <h4 data-aos="fade-up" data-aos-delay="400"> Streamline Your Connections, Simplify Your Life.".</h4>
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start">
               <div class="buton">
@@ -70,8 +70,6 @@
           <div class="col-lg-2 col-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">About us</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Services</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
