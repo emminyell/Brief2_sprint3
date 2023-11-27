@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
   
         $insert = "INSERT INTO `contact`(`contact_id`, `full_name`, `email`, `téléphone`, `description`, `date_creation`, `user_id`) VALUES(null,'$name','$email','$phone','$message','$date', 1)";
         mysqli_query($conn, $insert);
-        header('location:profile.php');
+        header('location:user_contact.php');
       }
 ?>
 
@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<!-- Contact 1 - Bootstrap Brain Component -->
+<!-- Contact -->
       <div id="contact" class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
         <h2 class="mb-4 display-5 text-center">Contact</h2>
       </div>
@@ -39,11 +39,12 @@ if(isset($_POST['submit'])){
           <form action="" method="post">
             <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
               <div class="col-12">
-                <label for="fullname" class="form-label">Full Name <span class="text-danger">*</span></label>
+                <label for="fullname"  class="form-label">Full Name <span class="text-danger">*</span></label>
                 <input type="text" class="form-control" id="fullname" name="fullname" value="" required>
+                <span id="nameeror"></span>
               </div>
               <div class="col-12 col-md-6">
-                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                <label for="email"  class="form-label">Email <span class="text-danger">*</span></label>
                 <div class="input-group">
                   <span class="input-group-text">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
@@ -51,6 +52,7 @@ if(isset($_POST['submit'])){
                     </svg>
                   </span>
                   <input type="email" class="form-control" id="email" name="email" value="" required>
+                  <span id="emaileror"></span>
                 </div>
               </div>
               <div class="col-12 col-md-6">
@@ -62,16 +64,19 @@ if(isset($_POST['submit'])){
                     </svg>
                   </span>
                   <input type="tel" class="form-control" id="phone" name="phone" value="">
+                  <span id="phoneeror"></span>
                 </div>
               </div>
               <div class="col-12">
                 <label for="message" class="form-label">description<span class="text-danger">*</span></label>
                 <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                <span id="messgeror"></span>
               </div>
               <div class="col-12 col-md-6">
                 <label for="phone" class="form-label">Creation Date</label>
                 <div class="input-group">
                   <input type="date" class="form-control" id="date" name="date" value="date">
+                  <span id="dateeror"></span>
               <div class="col-12">
                 <div id="btn_submit" class="d-grid">
                   <button name="submit" type="submit">Submit</button>
@@ -82,5 +87,71 @@ if(isset($_POST['submit'])){
     </div>
   </div>
 </section>
+
+
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.querySelector('form');
+
+            form.addEventListener('submit', function (event) {
+                if (!validateForm()) {
+                    event.preventDefault();
+                }
+            });
+
+            function validateForm() {
+                const fullname = document.getElementById('fullname').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const message = document.getElementById('message').value;
+                const date = document.getElementById('date').value;
+
+
+                if (!/^[a-zA-Z]+$/.test(fullname)) {
+                   let span = document.getElementById('nameeror');
+                   span.innerHTML='Name must contain only letters';
+                   span.style.color='red';
+                    return false;
+                }
+                
+                if (!/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
+                    let span = document.getElementById('emaileror');
+                    span.innerHTML='email invalid';
+                    span.style.color='red';
+                  
+                    return false;
+                }
+
+                if (!/^[a-zA-Z0-9]+$/.test(phone)) {
+                    let span = document.getElementById('phoneeror');
+                    span.innerHTML='phone must contain only numbers';
+                    span.style.color='red';
+                  
+                    return false;
+                }
+
+                if (!/^[a-zA-Z]+$/.test(message)) {
+                    let span = document.getElementById('messgeror');
+                    span.innerHTML='description invalid';
+                    span.style.color='red';
+                  
+                    return false;
+                }
+
+                if (!/^[a-zA-Z0-9]+$/.test(date)) {
+                    let span = document.getElementById('dateeror');
+                    span.innerHTML='date invalid';
+                    span.style.color='red';
+                  
+                    return false;
+                }
+
+
+
+
+                return true; 
+            }
+        });
+    </script>
 </body>
 </html>

@@ -25,7 +25,7 @@
       <a class="logo">YOUCONTACT</a></div>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Library</a></li>
           <li><a class="nav-link scrollto" href="register_form.php">Sing up</a></li>
           <li><a class="getstarted scrollto" href="login_form.php">Sign in</a></li>
         </ul>
@@ -54,14 +54,11 @@
           </div>
         </div>
       </div>
-      <img src="glasses.png" class="img" alt="" width="60%" height="400px">
+      <img src="glasses.svg" class="image" alt=""   width="800px"; height="300px";>
     </div>
-
   </section><!-- End Hero -->
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
-
-
     <div class="footer-top">
       <div class="container">
         <div class="row gy-4">
