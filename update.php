@@ -13,7 +13,7 @@ if(isset($_POST['submit'])){
     $name = $_POST['fullname'];
     $email= $_POST['email'];
     $phone= $_POST['phone'];
-    $date= $_POST['date'];
+    $date=date('y_m_d h:i:s');
     $message= $_POST['message'];
 
         $update = "UPDATE `contact` SET `full_name`='$name',`email`='$email',`téléphone`='$phone',`description`='$message',`date_creation`='$date' where contact_id=$id";

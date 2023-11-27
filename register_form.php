@@ -32,14 +32,18 @@ if(isset($_POST['submit'])){
 
    <form action="" method="post">
       <h3>register now</h3>
-      <input type="text" name="name" required placeholder="enter your name">
-      <input type="email" name="email" required placeholder="enter your email">
-      <input type="password" name="password" required placeholder="enter your password">
+      <input type="text" id="fullname" name="name" required placeholder="enter your name">
+      <span id="nameeror"></span>
+      <input type="email" id="email" name="email" required placeholder="enter your email">
+      <span id="emaileror"></span>
+      <input type="password" id="password" name="password"  required placeholder="enter your password">
+      <span id="passeror"></span>
       <input type="submit" name="submit" value="register now" class="form-btn">
       <p>already have an account? <a href="login_form.php">login now</a></p>
    </form>
 
 </div>
+<script link="script.js"></script>
 
 </body>
 </html>

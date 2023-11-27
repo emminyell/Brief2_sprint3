@@ -42,12 +42,19 @@ document.addEventListener('DOMContentLoaded', function () {
             let span = document.getElementById('messgeror');
             span.innerHTML='description invalid';
             span.style.color='red';
+        }
+            if (!/^[a-zA-Z]+$/.test(password)) {
+                let span = document.getElementById('passeror');
+                span.innerHTML='description invalid';
+                span.style.color='red';
             
             return false;
         }
         return true; 
     }
 });
+
+
 
 
 
