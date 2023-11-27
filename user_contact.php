@@ -59,8 +59,8 @@ if (mysqli_num_rows($result) > 0) {
             <td>'.$description.'</td>
             <td>'.$cdate.'</td>
             <td>
-            <button><a href="update.php?updateid='.$id.'">Update</a></button>
-            <button><a href="delete.php?deleteid='.$id.'">delete</a></button>
+            <button id="update"><a href="update.php?updateid='.$id.'">Update</a></button>
+            <button id="delete"><a href="delete.php?deleteid='.$id.'">delete</a></button>
             </td>
           </tr>';
   }

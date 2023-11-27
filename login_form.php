@@ -13,6 +13,7 @@ if(isset($_POST['okk'])){
       $row=mysqli_fetch_assoc($result);
       $_SESSION['id']=$row['user_id'];
       $_SESSION['user_name']=$row['user_name'];
+      $_SESSION['date_updated']=$row['date_updated'];
       header('location:profile.php');
    }
 }

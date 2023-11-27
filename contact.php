@@ -7,7 +7,7 @@ if(isset($_POST['submit'])){
   $name = $_POST['fullname'];
   $email= $_POST['email'];
   $phone= $_POST['phone'];
-  $date= $_POST['date'];
+  $date=date('y_m_d h:i:s');
   $message= $_POST['message'];
   
         $insert = "INSERT INTO `contact`(`contact_id`, `full_name`, `email`, `téléphone`, `description`, `date_creation`, `user_id`) VALUES(null,'$name','$email','$phone','$message','$date', 1)";
@@ -72,11 +72,6 @@ if(isset($_POST['submit'])){
                 <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
                 <span id="messgeror"></span>
               </div>
-              <div class="col-12 col-md-6">
-                <label for="phone" class="form-label">Creation Date</label>
-                <div class="input-group">
-                  <input type="date" class="form-control" id="date" name="date" value="date">
-                  <span id="dateeror"></span>
               <div class="col-12">
                 <div id="btn_submit" class="d-grid">
                   <button name="submit" type="submit">Submit</button>
@@ -137,18 +132,6 @@ if(isset($_POST['submit'])){
                   
                     return false;
                 }
-
-                if (!/^[a-zA-Z0-9]+$/.test(date)) {
-                    let span = document.getElementById('dateeror');
-                    span.innerHTML='date invalid';
-                    span.style.color='red';
-                  
-                    return false;
-                }
-
-
-
-
                 return true; 
             }
         });
