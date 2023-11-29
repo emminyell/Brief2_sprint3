@@ -60,7 +60,7 @@ if (mysqli_num_rows($result) > 0) {
             <td>'.$cdate.'</td>
             <td>
             <button id="update"><a href="update.php?updateid='.$id.'">Update</a></button>
-            <button id="delete"><a href="delete.php?deleteid='.$id.'">delete</a></button>
+            <button id="delete"><a href="delete.php?deleteid='.$id.'"">delete</a></button>
             </td>
           </tr>';
   }
@@ -73,3 +73,12 @@ mysqli_close($conn);
 
 ?>
 </table>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+document.getElementById("delete").addEventListener("click", function() {
+    var value = "are you sure you want to delete  this contact?";
+    alert(value);
+})});
+</script>
+</body>
+</html>

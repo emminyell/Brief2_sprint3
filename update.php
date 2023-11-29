@@ -81,7 +81,7 @@ if(isset($_POST['submit'])){
               </div>
               <div class="col-12">
                 <div id="btn_submit" class="d-grid">
-                  <button name="submit" type="submit">Submit</button>
+                  <button id="okk" name="submit" type="submit">Submit</button>
             </div>
           </form>
         </div>
@@ -90,5 +90,12 @@ if(isset($_POST['submit'])){
   </div>
 </section>
 <script link="script.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+document.getElementById("okk").addEventListener("click", function() {
+    var value = "are you sure you want to save this changes?";
+    alert(value);
+})});
+</script>
 </body>
 </html>

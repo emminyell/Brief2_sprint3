@@ -54,6 +54,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+//page delete
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("delete").addEventListener("click", function() {
+        var value = "are you sure you want to delete  this contact";
+        alert(value);
+    })});
+
+    //page update
+    
+
 
 
 
