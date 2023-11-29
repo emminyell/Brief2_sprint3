@@ -3,7 +3,7 @@ session_start();
 @include 'config.php';
 
 
-if(isset($_POST['okk'])){
+if(isset($_POST['submit'])){
    $email = $_POST['email'];
    $pasword = md5($_POST['password']);
 
@@ -39,13 +39,14 @@ if(isset($_POST['okk'])){
    <form action="" method="post">
       <h3>login now</h3>
       <input type="email" name="email" required placeholder="enter your email">
+      <span id="emaileror"></span>
       <input type="password" name="password" required placeholder="enter your password">
-      <input type="submit" name="okk" value="login now" class="form-btn">
+      <input type="submit" name="submit" value="login now" class="form-btn">
       <p>don't have an account? <a href="register_form.php">register now</a></p>
    </form>
 
 </div>
-
+<script link="script.js"></script>
 </body>
 </html>
 
