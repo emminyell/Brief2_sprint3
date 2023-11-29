@@ -21,7 +21,7 @@ session_start();
       <p>this is your profile</p>
       <a href="user_contact.php" class="btn">contact</a>
       <a href="logout.php" class="btn">logout</a>
-      <p>online</p>
+      <br><p>Last Online</p>
       <p><?php echo $_SESSION['date_updated']?></p>
   </div>
 </div>
